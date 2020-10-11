@@ -1,0 +1,40 @@
+
+  .axis {
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis line {
+    stroke: lightgrey;
+  }
+
+  .x.axis .minor {
+    stroke-opacity: .5;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  .y.axis line, .y.axis path {
+    fill: none;
+    stroke: #000;
+  }
+
+  #magic {
+      width: 150px;
+      height: 150px;
+  }
+
+  /* don't do anything fancy when hovering */
+  #magic .c3-defocused.c3-target {
+      opacity: 1 !important;
+  }
+
+  #magic text {
+      fill: #ccc;
+  }
+
+  #magic .c3-chart-arcs-title {
+      fill: white;
+      font-size: 3em;
+  }
