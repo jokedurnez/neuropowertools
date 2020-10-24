@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
+import numpy as np
+import string
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h2b0+8$iukknb#s_yq93vcb)31!^khb8sc=uvtpo=4%!*9rrw!'
+SECRET_KEY = ''.join(np.random.choice(list(string.ascii_lowercase), 50, replace=True))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'neuropowertools.apps.power',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
