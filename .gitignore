@@ -134,3 +134,4 @@ dmypy.json
 
 # manual
 help.sh
+.env.dev
