@@ -5,7 +5,7 @@ WORKDIR /code/
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-ADD ./entrypoint.sh .
+ADD entrypoint.sh .
 
 # install psycopg2 dependencies
 USER root
@@ -13,7 +13,7 @@ RUN apt-get update \
     && apt-get install -y postgresql gcc python3-dev musl-dev
 
 # get dependencies
-COPY docker/environment.yml /code/
+COPY docker/neuropowertools/environment.yml /code/
 COPY . /code/
 RUN conda config --set restore_free_channel true
 RUN conda config --append channels conda-forge
